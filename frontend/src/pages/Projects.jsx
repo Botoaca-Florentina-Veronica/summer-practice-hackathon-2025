@@ -7,6 +7,17 @@ const Projects = () => {
   const allProjects = JSON.parse(localStorage.getItem('projects') || '{}');
   const userProjects = allProjects[user.email] || [];
 
+  const handleDownload = (fileName) => {
+    const dataUrl = localStorage.getItem(`file_${user.email}_${fileName}`);
+    if (!dataUrl) return;
+    const a = document.createElement('a');
+    a.href = dataUrl;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
+
   return (
     <div style={{ maxWidth: 700, margin: '40px auto', padding: 24, background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.10)' }}>
       <h2 style={{marginBottom:32}}>Proiectele tale</h2>
@@ -15,6 +26,27 @@ const Projects = () => {
         <div key={idx} style={{ marginBottom: 32, borderBottom: '1px solid #eee', paddingBottom: 24 }}>
           <h3 style={{marginBottom:8}}>{proj.title}</h3>
           <pre style={{ background: '#fafafa', padding: 16, borderRadius: 8, fontFamily: 'monospace', color: '#222', overflowX: 'auto' }}>{proj.code}</pre>
+          {proj.files && proj.files.length > 0 && (
+            <div style={{ marginTop: 10 }}>
+              <b>Fișiere încărcate:</b>
+              <ul style={{ paddingLeft: 18 }}>
+                {proj.files.map((f, i) => (
+                  <li key={i}>
+                    <button style={{
+                      background: 'none',
+                      border: 'none',
+                      color: '#1976d2',
+                      textDecoration: 'underline',
+                      cursor: 'pointer',
+                      fontSize: 15
+                    }} onClick={() => handleDownload(f.name)}>
+                      {f.name}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <div style={{ color: '#888', fontSize: 13, marginTop: 8 }}>Salvat: {new Date(proj.date).toLocaleString()}</div>
         </div>
       ))}
