@@ -16,7 +16,7 @@ const Header = () => {
         </button>
       </div>
       <div className="header-actions">
-        <button className="new-project-btn">
+        <button className="new-project-btn" onClick={() => navigate('/new-project')}>
           <AddIcon className="new-project-icon" />
           <ArrowDropDownIcon className="dropdown-icon" />
           <span className="new-project-text">New Project</span>

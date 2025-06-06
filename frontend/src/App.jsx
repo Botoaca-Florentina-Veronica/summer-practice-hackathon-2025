@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Login from './pages/Login';
 import MainStage from './components/MainStage';
 import Footer from './components/Footer';
+import NewProject from './pages/NewProject';
 import './App.css'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainStage />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/new-project" element={<NewProject />} />
       </Routes>
       <Footer />
     </Router>
