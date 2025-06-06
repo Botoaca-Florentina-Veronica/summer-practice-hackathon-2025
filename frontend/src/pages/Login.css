@@ -11,7 +11,7 @@
 }
 .login-container h2 {
   margin-bottom: 8px;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: bold;
 }
 button {
@@ -77,6 +77,7 @@ input[type="email"], input[type="password"] {
   border-radius: 6px;
   font-size: 1rem;
   margin-bottom: 0;
+  background-color: #fff;
 }
 .login-btn {
   background: #43b04a;

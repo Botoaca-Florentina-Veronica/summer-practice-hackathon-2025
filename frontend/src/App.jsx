@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react'
 import Header from './components/Header';
 import Login from './pages/Login';
+import MainStage from './components/MainStage';
 import './App.css'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <Router>
       <Header />
       <Routes>
+        <Route path="/" element={<MainStage />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
