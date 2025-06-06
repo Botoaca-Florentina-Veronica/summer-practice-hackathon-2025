@@ -35,6 +35,7 @@
   font-size: 1.1rem;
   background: #fafafa;
   transition: border 0.2s;
+  color: black;
 }
 .email-login input:focus {
   border: 1.5px solid #43b04a;
@@ -75,7 +76,8 @@
 
 .error-message {
   color: #ff4444;
-  margin-bottom: 1rem;
+  margin-bottom: 7rem;
+  margin-top:-6rem;
   text-align: center;
 }
 
