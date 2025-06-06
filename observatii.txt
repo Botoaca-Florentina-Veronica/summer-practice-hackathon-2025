@@ -1,0 +1,4 @@
+-de rezolvat autentificarea(adauga logica de implementare + oAuth macar la google)
+-fa deploy pe render
+-adauga text in footer de copyright
+-conecteaza la baza de date!! cat mai repede
