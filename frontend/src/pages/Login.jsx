@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import googleIcon from "../assets/images/google.png";
 import facebookIcon from "../assets/images/facebook.png";
 import appleIcon from "../assets/images/apple.png";
 import "./Login.css";
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <div className="login-container">
       <h2>Intră în cont</h2>
@@ -27,7 +29,7 @@ const Login = () => {
         <a href="#" className="forgot">
           Ai uitat parola?
         </a>
-        <a href="#" className="create">
+        <a className="create" onClick={() => navigate('/sign-up')} style={{ cursor: 'pointer' }}>
           Creează cont
         </a>
       </div>

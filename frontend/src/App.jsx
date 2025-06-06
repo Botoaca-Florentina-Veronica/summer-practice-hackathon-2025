@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import MainStage from './components/MainStage';
 import Footer from './components/Footer';
 import NewProject from './pages/NewProject';
+import SignUp from './pages/SignUp';
 import './App.css'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<MainStage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/new-project" element={<NewProject />} />
+        <Route path="/sign-up" element={<SignUp />} />
       </Routes>
       <Footer />
     </Router>
