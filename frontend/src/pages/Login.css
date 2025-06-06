@@ -1,0 +1,100 @@
+.login-container {
+  background: #fff;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 32px 32px 16px 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.login-container h2 {
+  margin-bottom: 8px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+button {
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  padding: 12px 0;
+  margin-bottom: 0;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.google-btn {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #222;
+}
+.google-icon {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg') no-repeat center/contain;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+.facebook-btn {
+  background: #1877f3;
+  color: #fff;
+}
+.facebook-icon {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png') no-repeat center/contain;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+.apple-btn {
+  background: #000;
+  color: #fff;
+}
+.apple-icon {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg') no-repeat center/contain;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+.separator {
+  text-align: center;
+  margin: 16px 0 0 0;
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #222;
+  border-bottom: 1px solid #eee;
+  border-top: 1px solid #eee;
+  padding: 8px 0;
+}
+input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+.login-btn {
+  background: #43b04a;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 8px;
+}
+.login-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.login-footer a {
+  color: #111;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.login-footer a.create {
+  font-weight: 500;
+}
