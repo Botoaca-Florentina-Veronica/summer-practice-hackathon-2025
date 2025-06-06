@@ -17,5 +17,8 @@ app.get('/', (req, res) => {
   res.send('Backend funcționează!');
 });
 
+const usersRouter = require('./routes/users');
+app.use('/api/users', usersRouter);
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Serverul rulează pe portul ${PORT}`));

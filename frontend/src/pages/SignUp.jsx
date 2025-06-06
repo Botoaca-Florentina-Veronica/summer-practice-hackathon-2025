@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import GoogleIcon from '../assets/images/google.png';
+import FacebookIcon from '../assets/images/facebook.png';
+import AppleIcon from '../assets/images/apple.png';
 import '../pages/SignUp.css';
 
 export default function SignupPage() {
