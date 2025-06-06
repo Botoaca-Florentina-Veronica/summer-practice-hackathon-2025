@@ -7,6 +7,7 @@ import MainStage from './components/MainStage';
 import Footer from './components/Footer';
 import NewProject from './pages/NewProject';
 import SignUp from './pages/SignUp';
+import Projects from './pages/Projects';
 import './App.css'
 import { AuthProvider } from './api/auth.jsx';
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/new-project" element={<NewProject />} />
           <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
         <Footer />
       </Router>

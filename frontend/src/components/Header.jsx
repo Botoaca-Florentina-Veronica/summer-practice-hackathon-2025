@@ -8,10 +8,10 @@ import './Header.css';
 import { useAuth } from '../api/auth.jsx';
 
 const Header = () => {
-  const navigate = useNavigate();
   const { user, logout } = useAuth();
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef();
+  const navigate = useNavigate();
 
   // Închide meniul dacă dai click în afara lui
   useEffect(() => {
@@ -50,6 +50,11 @@ const Header = () => {
     navigate('/');
   };
 
+  const handleMyProjects = () => {
+    setShowMenu(false);
+    navigate('/projects');
+  };
+
   return (
     <header className="header">
       <div className="logo-section">
@@ -82,6 +87,19 @@ const Header = () => {
               minWidth: 160,
               padding: 0
             }}>
+              <button style={{
+                width: '100%',
+                padding: '12px 16px',
+                background: 'none',
+                border: 'none',
+                textAlign: 'left',
+                fontSize: 16,
+                cursor: 'pointer',
+                color: '#222',
+                borderRadius: 8
+              }} onClick={handleMyProjects}>
+                My Projects
+              </button>
               <button style={{
                 width: '100%',
                 padding: '12px 16px',
