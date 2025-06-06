@@ -12,12 +12,12 @@ const NewProject = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Salvăm proiectul în localStorage per user
+    // Salvăm proiectul în localStorage per user (după email)
     if (user) {
       const allProjects = JSON.parse(localStorage.getItem('projects') || '{}');
-      const userProjects = allProjects[user.token] || [];
+      const userProjects = allProjects[user.email] || [];
       userProjects.push({ title, code, date: new Date().toISOString() });
-      allProjects[user.token] = userProjects;
+      allProjects[user.email] = userProjects;
       localStorage.setItem('projects', JSON.stringify(allProjects));
       navigate('/projects');
     }
@@ -27,7 +27,7 @@ const NewProject = () => {
     <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" minHeight="60vh">
       <form onSubmit={handleSubmit} style={{ width: '100%', maxWidth: 400 }}>
         <TextField
-          label="titlul proiectului"
+          label="Project name: "
           variant="outlined"
           value={title}
           onChange={e => {
@@ -39,7 +39,7 @@ const NewProject = () => {
         />
         <div style={{ color: '#888', marginTop: 8, fontSize: 14 }}>{title.length}/100</div>
         <TextField
-          label="codul dumneavoastra"
+          label="Your code here:"
           variant="outlined"
           value={code}
           onChange={e => setCode(e.target.value)}

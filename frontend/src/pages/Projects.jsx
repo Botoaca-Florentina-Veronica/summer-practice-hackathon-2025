@@ -5,7 +5,7 @@ const Projects = () => {
   const { user } = useAuth();
   if (!user) return <div style={{textAlign:'center',marginTop:40}}>Trebuie să fii autentificat pentru a vedea proiectele tale.</div>;
   const allProjects = JSON.parse(localStorage.getItem('projects') || '{}');
-  const userProjects = allProjects[user.token] || [];
+  const userProjects = allProjects[user.email] || [];
 
   return (
     <div style={{ maxWidth: 700, margin: '40px auto', padding: 24, background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.10)' }}>

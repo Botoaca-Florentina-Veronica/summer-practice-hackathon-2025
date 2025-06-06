@@ -5,23 +5,26 @@ const AuthContext = createContext();
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    // Încarcă user din localStorage dacă există
-    const token = localStorage.getItem("token");
-    if (token) {
-      setUser({ token });
-    }
-  }, []);
-
-  const login = (token) => {
+  const login = (token, email) => {
     localStorage.setItem("token", token);
-    setUser({ token });
+    localStorage.setItem("email", email);
+    setUser({ token, email });
   };
 
   const logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("email");
     setUser(null);
   };
+
+  useEffect(() => {
+    // Încarcă user din localStorage dacă există
+    const token = localStorage.getItem("token");
+    const email = localStorage.getItem("email");
+    if (token && email) {
+      setUser({ token, email });
+    }
+  }, []);
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
