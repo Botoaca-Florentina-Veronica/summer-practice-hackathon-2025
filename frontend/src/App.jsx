@@ -8,21 +8,24 @@ import Footer from './components/Footer';
 import NewProject from './pages/NewProject';
 import SignUp from './pages/SignUp';
 import './App.css'
+import { AuthProvider } from './api/auth.jsx';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<MainStage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/new-project" element={<NewProject />} />
-        <Route path="/sign-up" element={<SignUp />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<MainStage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/new-project" element={<NewProject />} />
+          <Route path="/sign-up" element={<SignUp />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </AuthProvider>
   )
 }
 

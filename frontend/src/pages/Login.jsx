@@ -5,9 +5,11 @@ import googleIcon from "../assets/images/google.png";
 import facebookIcon from "../assets/images/facebook.png";
 import appleIcon from "../assets/images/apple.png";
 import "./Login.css";
+import { useAuth } from '../api/auth.jsx';
 
 const Login = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -22,6 +24,7 @@ const Login = () => {
         email,
         password,
       });
+      login(response.data.token); // Salvează tokenul și setează userul ca autentificat
       navigate("/");
     } catch (err) {
       setError(err.response?.data?.error || "Autentificare eșuată");
