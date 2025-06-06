@@ -1,0 +1,32 @@
+hobbiz-mui/
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   │   └── images/    # logo-uri, poze pentru categorii, etc
+│   │   ├── api/
+│   │   │   └── api.js
+│   │   ├── components/
+│   │   │   ├── CallToAction.jsx, CallToAction.css
+│   │   │   ├── Categories.jsx, Categories.css
+│   │   │   ├── Content.jsx, Content.css
+│   │   │   ├── DarkModeToggle.jsx, DarkModeToggle.css
+│   │   │   ├── Footer.jsx, Footer.css
+│   │   │   ├── Header.jsx, Header.css
+│   │   │   └── MainStage.jsx, MainStage.css
+│   │   ├── pages/
+│   │   │   ├── LoginPage.jsx, LoginSignup.css
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   ├── main.jsx
+│   │   └── mediaQueries.css
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   └── README.md
+├── backend/
+│   └── package.json
+├── observatii.txt
+├── README.md
+└── structura.txt

@@ -1,0 +1,20 @@
+.footer {
+  width: 100%;
+  background: #fff;
+  margin-top: 48px;
+  padding-bottom: 16px;
+}
+
+.footer-bar {
+  border-top: 2px solid #e0e0e0;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.footer-content {
+  color: #111;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 8px;
+}

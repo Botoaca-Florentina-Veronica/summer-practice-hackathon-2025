@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Header from './components/Header';
 import Login from './pages/Login';
 import MainStage from './components/MainStage';
+import Footer from './components/Footer';
 import './App.css'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<MainStage />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      <Footer />
     </Router>
   )
 }
