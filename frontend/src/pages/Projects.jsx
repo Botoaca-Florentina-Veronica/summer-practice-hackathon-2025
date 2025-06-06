@@ -1,55 +1,43 @@
 import React from "react";
 import { useAuth } from '../api/auth.jsx';
+import { useNavigate } from 'react-router-dom';
 
 const Projects = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   if (!user) return <div style={{textAlign:'center',marginTop:40}}>Trebuie să fii autentificat pentru a vedea proiectele tale.</div>;
   const allProjects = JSON.parse(localStorage.getItem('projects') || '{}');
   const userProjects = allProjects[user.email] || [];
-
-  const handleDownload = (fileName) => {
-    const dataUrl = localStorage.getItem(`file_${user.email}_${fileName}`);
-    if (!dataUrl) return;
-    const a = document.createElement('a');
-    a.href = dataUrl;
-    a.download = fileName;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  };
 
   return (
     <div style={{ maxWidth: 700, margin: '40px auto', padding: 24, background: '#fff', borderRadius: 16, boxShadow: '0 4px 24px rgba(0,0,0,0.10)' }}>
       <h2 style={{marginBottom:32}}>Proiectele tale</h2>
       {userProjects.length === 0 && <div style={{color:'#888'}}>Nu ai niciun proiect salvat.</div>}
-      {userProjects.map((proj, idx) => (
-        <div key={idx} style={{ marginBottom: 32, borderBottom: '1px solid #eee', paddingBottom: 24 }}>
-          <h3 style={{marginBottom:8}}>{proj.title}</h3>
-          <pre style={{ background: '#fafafa', padding: 16, borderRadius: 8, fontFamily: 'monospace', color: '#222', overflowX: 'auto' }}>{proj.code}</pre>
-          {proj.files && proj.files.length > 0 && (
-            <div style={{ marginTop: 10 }}>
-              <b>Fișiere încărcate:</b>
-              <ul style={{ paddingLeft: 18 }}>
-                {proj.files.map((f, i) => (
-                  <li key={i}>
-                    <button style={{
-                      background: 'none',
-                      border: 'none',
-                      color: '#1976d2',
-                      textDecoration: 'underline',
-                      cursor: 'pointer',
-                      fontSize: 15
-                    }} onClick={() => handleDownload(f.name)}>
-                      {f.name}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-          <div style={{ color: '#888', fontSize: 13, marginTop: 8 }}>Salvat: {new Date(proj.date).toLocaleString()}</div>
-        </div>
-      ))}
+      <ul style={{listStyle:'none',padding:0}}>
+        {userProjects.map((proj, idx) => (
+          <li key={idx} style={{ marginBottom: 24 }}>
+            <button
+              style={{
+                background: '#fafafa',
+                border: '1px solid #e0e0e0',
+                borderRadius: 8,
+                padding: '16px 20px',
+                fontSize: 18,
+                fontWeight: 500,
+                color: '#222',
+                width: '100%',
+                textAlign: 'left',
+                cursor: 'pointer',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
+              }}
+              onClick={() => navigate(`/projects/${idx}`)}
+            >
+              {proj.title || 'Fără titlu'}
+            </button>
+            <div style={{ color: '#888', fontSize: 13, marginTop: 8 }}>Salvat: {new Date(proj.date).toLocaleString()}</div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
