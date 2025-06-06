@@ -98,3 +98,8 @@ input[type="email"], input[type="password"] {
 .login-footer a.create {
   font-weight: 500;
 }
+.icon-img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
