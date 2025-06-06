@@ -79,12 +79,22 @@ input[type="email"], input[type="password"] {
   font-size: 1rem;
   margin-bottom: 0;
   background-color: #fff;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom:0.5rem;
+  color: black;
 }
 .login-btn {
   background: #43b04a;
   color: #fff;
   font-size: 1.2rem;
   margin-top: 8px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #43b04a;
+  box-sizing: border-box;
+  display: block;
 }
 .login-footer {
   display: flex;
